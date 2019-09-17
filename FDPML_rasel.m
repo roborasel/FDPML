@@ -35,8 +35,8 @@ for j=1:numel(kna)
     d = [0;(w^2 -2*g./M(2:n_total-1)).*U_inc(2:n_total-1)+(g./M(2:n_total-1)).*(U_inc(3:n_total)+U_inc(1:n_total-2));0];                       
     U_scat=TDMAsolver(A,b,c,d);
     u_scat=U_scat';
-%     U_scat=gallery('tridiag',c,b,A);   %Could not make it work
-%     u_scat=U_scat\d;
+%   U_scat=gallery('tridiag',c,b,A);   %Could not make it work
+%   u_scat=U_scat\d;
 
      
    
@@ -46,7 +46,7 @@ for j=1:numel(kna)
     Re= sum(R);
     Tr= sum(T);
        
-Te(j)= Tr/(Re+Tr);   %Reflection coefficient
+    Te(j)= Tr/(Re+Tr);   %Reflection coefficient
 end
 
 plot(kna,Te)
